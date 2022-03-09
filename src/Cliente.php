@@ -51,7 +51,7 @@
             return $this->dataNascimento;
         }
 
-        public function setDataNascmento($dataNascimento) {
+        public function setDataNascimento($dataNascimento) {
             $this->dataNascimento = $dataNascimento;
         }
 

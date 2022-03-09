@@ -6,10 +6,10 @@
 	
 	class ConexaoMySQL {
 		
-	    private $db = "GENIUS";
+	    private $db = "FORCADOHABITO";
 	    private $user  = "root";
-	    private $pass  = "";
-	    private $server = "localhost";
+	    private $pass  = "123456";
+	    private $server = "127.0.0.1";
 	    private $connection = null;
 	    
 	    public function __construct(){
@@ -22,7 +22,7 @@
 		    
 		    $this->connection->set_charset("UTF-8");
 
-            return mysqli_connect_errno() ? "Erro ao conectar com o banco de dados: " . mysqli_connect_error() : $this->conexao;
+            return mysqli_connect_errno() ? "Erro ao conectar com o banco de dados: " . mysqli_connect_error() : $this->connection;
 			
 		}
 	

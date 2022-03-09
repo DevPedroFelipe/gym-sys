@@ -68,22 +68,6 @@
             $this->email = $email;
         }
 
-        public function getPrimeiroAcesso() {
-            return $this->primeiroAcesso;
-        }
-
-        public function setPrimeiroAcesso($primeiroAcesso) {
-            $this->primeiroAcesso = $primeiroAcesso;
-        }
-
-        public function getUltimoAcesso() {
-            return $this->ultimoAcesso;
-        }
-
-        public function setUltimoAcesso($ultimoAcesso) {
-            $this->ultimoAcesso = $ultimoAcesso;
-        }
-
         public function getStatus() {
             return $this->status;
         }
@@ -99,8 +83,6 @@
         public function setDataCadastro($dataCadastro) {
             $this->dataCadastro = $dataCadastro;
         }
-
-        
 
     }
 ?>

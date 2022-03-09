@@ -32,6 +32,7 @@
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="fa-solid fa-circle-plus fa-lg"></i>&nbsp;Cadastrar</a>
               <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                <li><a class="dropdown-item" href="#">Usuário</a></li>
                 <li><a class="dropdown-item" href="#">Cliente</a></li>
                 <li><a class="dropdown-item" href="#">Categoria</a></li>
               </ul>
@@ -39,6 +40,7 @@
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="fa-solid fa-bars-staggered fa-lg"></i>&nbsp;Relatório</a>
               <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                <li><a class="dropdown-item" href="index.php?cod=4">Usuário</a></li>
                 <li><a class="dropdown-item" href="#">Cliente</a></li>
                 <li><a class="dropdown-item" href="#">Categoria</a></li>
               </ul>
@@ -47,6 +49,47 @@
         </div>
       </div>
     </nav>
+    <div class="container-fluid padding h-75 overflow-auto">
+      <?php
+
+      //if (isset($_SESSION['login']) and isset($_SESSION['senha'])) {
+
+        if (isset($_GET['cod'])) {
+
+          if ($_GET['cod'] == 1) {
+
+            include 'cadastrarUsuario.php';
+          }
+
+          if ($_GET['cod'] == 2) {
+
+            include 'cadastrarCliente.php';
+          }
+
+          if ($_GET['cod'] == 3) {
+
+            include 'cadastrarCategoria.php';
+          }
+
+          if ($_GET['cod'] == 4) {
+
+            include 'listarUsuarios.php';
+          }
+
+          if ($_GET['cod'] == 5) {
+
+            include 'listarCliente.php';
+          }
+
+          if ($_GET['cod'] == 6) {
+
+            include 'listarCategoria.php';
+          }
+        }
+      //}
+
+      ?>
+    </div>
   </div>
 
   <!-- Optional JavaScript; choose one of the two! -->
