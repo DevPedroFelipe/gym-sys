@@ -12,8 +12,6 @@ CREATE TABLE USUARIO(
     SENHA               VARCHAR(150)        NOT NULL,
     PERFIL              VARCHAR(25)         NOT NULL,
     EMAIL               VARCHAR(25)         NOT NULL,
-    PRIMEIROACESSO      DATETIME            NULL,
-    ULTIMOACESSO        DATETIME            NULL,
     STATUS              BOOLEAN             NOT NULL,
     DATACADASTRO        DATETIME            NOT NULL,
     PRIMARY KEY(ID)
@@ -45,12 +43,7 @@ CREATE TABLE CLIENTE(
     );
 
 
-INSERT INTO USUARIO
-(NOMECOMPLETO, LOGIN, SENHA, PERFIL, EMAIL, PRIMEIROACESSO, ULTIMOACESSO, STATUS, DATACADASTRO)
-VALUES('Pedro Felipe Marques Ramos de França', 'lipe', SHA1('123456'),'Premium', 'tipedrofelipe@gmail.com',
-'2022-03-08 09:45:35', '2022-03-08 09:50:27', TRUE, '2022-03-08 09:43:08');
-
-INSERT INTO USUARIO
-(NOMECOMPLETO, LOGIN, SENHA, PERFIL, EMAIL, PRIMEIROACESSO, ULTIMOACESSO, STATUS, DATACADASTRO)
-VALUES('Daniely do Nascimento Faustino da Silva', 'dany', SHA1('123456'),'Premium', 'danyzinha@gmail.com',
-'2022-03-08 09:45:35', '2022-03-08 09:50:27', TRUE, '2022-03-08 09:43:08');
+    INSERT INTO USUARIO(NOMECOMPLETO, LOGIN, SENHA,
+     PERFIL, EMAIL, DATACADASTRO)
+     VALUES('Pedro Felipe Marques Ramos de França', 'lipe', SHA1('123456'),
+     'Premium', 'tipedrofelipe@gmail.com', TRUE, '2022-03-08 09:43:08');

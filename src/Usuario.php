@@ -11,8 +11,6 @@
         private $senha;
         private $perfil;
         private $email;
-        private $primeiroAcesso;
-        private $ultimoAcesso;
         private $status;
         private $dataCadastro;
         
