@@ -32,17 +32,17 @@
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="fa-solid fa-circle-plus fa-lg"></i>&nbsp;Cadastrar</a>
               <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                <li><a class="dropdown-item" href="#">Usuário</a></li>
-                <li><a class="dropdown-item" href="#">Cliente</a></li>
-                <li><a class="dropdown-item" href="#">Categoria</a></li>
+                <li><a class="dropdown-item" href="index.php?cod=1">Usuário</a></li>
+                <li><a class="dropdown-item" href="index.php?cod=2">Cliente</a></li>
+                <li><a class="dropdown-item" href="index.php?cod=3">Categoria</a></li>
               </ul>
             </li>
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="fa-solid fa-bars-staggered fa-lg"></i>&nbsp;Relatório</a>
               <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                 <li><a class="dropdown-item" href="index.php?cod=4">Usuário</a></li>
-                <li><a class="dropdown-item" href="#">Cliente</a></li>
-                <li><a class="dropdown-item" href="#">Categoria</a></li>
+                <li><a class="dropdown-item" href="index.php?cod=5">Cliente</a></li>
+                <li><a class="dropdown-item" href="index.php?cod=6">Categoria</a></li>
               </ul>
             </li>
           </ul>

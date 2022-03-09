@@ -49,14 +49,7 @@ $Usuarios = $RU->listarUsuarios();
 				<table class="table table-dark table-striped table-hover w-100">
 					<thead>
 						<tr>
-							<th colspan="6" class="display-4 text-center" colspan="5">LISTA DE USUÁRIOS&nbsp;<i class="fas fa-user"></i></th>
-						</tr>
-					</thead>
-					<thead>
-						<tr>
-							<th colspan="6">
-								<a class="btn btn-secondary float-right" href="index.php?cod=7"><i class="fas fa-plus"></i>&nbsp;Cadastrar</a>
-							</th>
+							<th colspan="6" class="display-6 text-center" colspan="5">RELATÓRIO DE USUÁRIOS&nbsp;<i class="fas fa-user"></i></th>
 						</tr>
 					</thead>
 					<thead>
@@ -91,7 +84,7 @@ $Usuarios = $RU->listarUsuarios();
 						<td><?php echo $Usuario->getLogin(); ?></td>
 						<td style = "color:<?php echo $cor?>;"><?php if ($Usuario->getStatus() == 1) { echo "Ativo"; } else { echo "Inativo"; } ?></td>
 						<td>
-						<a data-toggle="tooltip" data-placement="bottom" title="Consultar" class="btn btn-info btn-sm" href = "index.php?cod=8&idUsuario=<?php echo $Usuario->getId(); ?>"><i class="far fa-eye"></i></a>
+						<a data-toggle="tooltip" data-placement="bottom" title="Consultar" class="btn btn-info btn-sm text-white" href = "index.php?cod=8&idUsuario=<?php echo $Usuario->getId(); ?>"><i class="far fa-eye"></i></a>
 						<?php
 
 						if ($Usuario->getStatus() == 1) {
