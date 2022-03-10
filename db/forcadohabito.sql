@@ -42,6 +42,11 @@ CREATE TABLE CLIENTE(
 
     INSERT INTO USUARIO(NOME, LOGIN, SENHA,
      PERFIL, EMAIL, DATACADASTRO)
+     VALUES('Administrador', 'admin', SHA1('123456'),
+     'Administrar', 'adm@gmail.com', '2022-03-10 09:43:08');
+
+    INSERT INTO USUARIO(NOME, LOGIN, SENHA,
+     PERFIL, EMAIL, DATACADASTRO)
      VALUES('Pedro Felipe Marques Ramos de França', 'lipe', SHA1('123456'),
      'Administrar', 'tipedrofelipe@gmail.com', '2022-03-08 09:43:08');
 
