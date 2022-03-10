@@ -7,14 +7,13 @@
         // Atributos
         private $id;
         private $Categoria;
-        private $nomeCompleto;
+        private $nome;
         private $dataNascimento;
         private $cpf;
         private $sexo;
         private $email;
         private $telefone;
         private $observacao;
-        private $status;
         private $dataCadastro;
 
         // Método Construtor
@@ -39,12 +38,12 @@
             $this->Categoria = $Categoria;
         }
 
-        public function getNomeCompleto() {
-            return $this->nomeCompleto;
+        public function getNome() {
+            return $this->nome;
         }
 
-        public function setNomeCompleto($nomeCompleto) {
-            $this->nomeCompleto = $nomeCompleto;
+        public function setNome($nome) {
+            $this->nome = $nome;
         }
 
         public function getDataNascimento() {
@@ -93,14 +92,6 @@
 
         public function setObservacao($observacao) {
             $this->observacao = $observacao;
-        }
-
-        public function getStatus() {
-            return $this->status;
-        }
-
-        public function setStatus($status) {
-            $this->status = $status;
         }
 
         public function getDataCadastro() {

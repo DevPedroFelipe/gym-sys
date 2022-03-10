@@ -11,13 +11,8 @@ html, body {
 }
 
 @font-face {
-  font-family: FakeIdentity;
-  src: url('../font/FakeIdentity.ttf');
-}
-
-.dropdown-menu {
-  border-color: #212529;
-  border-width: 3px;
+  font-family: coolveticaCompressedHv;
+  src: url('../font/coolveticaCompressedHv.ttf');
 }
 
 .container {
@@ -28,6 +23,7 @@ html, body {
 
 .navbar {
 border-radius: 0 0 5px 5px;
+background-color: #3c8dbc;
 }
 
 .nav-link {
@@ -40,10 +36,18 @@ border-radius: 0 0 5px 5px;
 }
 
 .navbar-brand img {
-  height: 128px;
-  width: 128px;
+  height: 60px;
+  width: 60px;
   float: left;
   margin-right: 2rem;
   margin-left: 1rem;
-  border-radius: 15px 50px;
+  border-radius: 10px;
+}
+
+#parGym {
+  font-family: coolveticaCompressedHv;
+    margin: 0px 0 0 -45px;
+    font-size: 25px;
+    color: #ffffff;
+    margin-right: 2rem;
 }

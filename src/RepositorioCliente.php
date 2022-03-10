@@ -19,7 +19,7 @@ class RepositorioCliente {
     public function cadastrarCliente($Cliente) {
         $retorno = false;
 
-        $cadastrar = "INSERT INTO CLIENTE(IDCATEGORIA, NOMECOMPLETO, DATANASCIMENTO, CPF, SEXO, EMAIL, TELEFONE, STATUS, DATACADASTRO) VALUES(" . $Cliente->getCategoria()->getId() . ", '" . $Cliente->getNomeCompleto() . "', '" . $Cliente->getDataNascimento() . "', '" . $Cliente->getSexo() . "', '" . $Cliente->getEmail() . "', '".$Cliente->getTelefone()."', " . $Cliente->getStatus() . ", '" . $Cliente->getDataCadastro() . "');";
+        $cadastrar = "INSERT INTO CLIENTE(IDCATEGORIA, NOME, DATANASCIMENTO, CPF, SEXO, EMAIL, TELEFONE, STATUS, DATACADASTRO) VALUES(" . $Cliente->getCategoria()->getId() . ", '" . $Cliente->getNome() . "', '" . $Cliente->getDataNascimento() . "', '" . $Cliente->getSexo() . "', '" . $Cliente->getEmail() . "', '".$Cliente->getTelefone()."', '" . $Cliente->getDataCadastro() . "');";
 
         $conexao = $this->ConexaoMySQL->abrirBanco();
 
@@ -50,13 +50,12 @@ class RepositorioCliente {
                 $Cliente = new Cliente();
 
                 $Cliente->setId($linha['ID']);
-                $Cliente->setNomeCompleto($linha['NOMECOMPLETO']);
+                $Cliente->setNome($linha['NOME']);
                 $Cliente->setDataNascimento($linha['DATANASCIMENTO']);
                 $Cliente->setCPF($linha['CPF']);
                 $Cliente->setEmail($linha['EMAIL']);
                 $Cliente->setSexo($linha['SEXO']);
                 $Cliente->setTelefone($linha['TELEFONE']);
-                $Cliente->setStatus($linha['STATUS']);
                 $Cliente->setDataCadastro($linha['DATACADASTRO']);
                 
                 $Categoria = new Categoria();
@@ -77,7 +76,7 @@ class RepositorioCliente {
     // Método responsável por listar o(s) clientes(s)
     public function listarClientes() {
 
-        $consultar = "SELECT CLIENTE.ID, CLIENTE.NOMECOMPLETO, CLIENTE.STATUS FROM CLIENTE;";
+        $consultar = "SELECT CLIENTE.ID, CLIENTE.NOME, CLIENTE.STATUS FROM CLIENTE;";
 
         $conexao = $this->ConexaoMySQL->abrirBanco();
         $resultado = $conexao->query($consultar);
@@ -89,8 +88,7 @@ class RepositorioCliente {
                 $Cliente = new Cliente();
 
                 $Cliente->setId($linha['ID']);
-                $Cliente->setNomeCompleto($linha['NOMECOMPLETO']);
-                $Cliente->setStatus($linha['STATUS']);
+                $Cliente->setNome($linha['NOME']);
 
                 $Clientes[$i] = $Cliente;
 
@@ -105,31 +103,11 @@ class RepositorioCliente {
         return $Clientes;
     }
 
-    // Método responsável pela alteração do status do cliente pelo id
-    public function alterarStatusCliente($id, $status) {
-        $retorno = false;
-
-        $alterar = "UPDATE CLIENTE SET STATUS = " . $status . " WHERE ID = " . $id . ";";
-
-        $conexao = $this->ConexaoMySQL->abrirBanco();
-
-        if ($conexao->query($alterar)) {
-
-            $retorno = true;
-        } else {
-            echo mysqli_error($conexao);
-        }
-
-        $this->ConexaoMySQL->fecharBanco();
-
-        return $retorno;
-    }
-
     // Método responsável pela alteração do usuario
     public function alterarCliente($Cliente) {
         $retorno = false;
 
-        $alterar = "UPDATE CLIENTE SET IDCATEGORIA = ".$Cliente->getCategoria()->getId().", NOMECOMPLETO = " . $Cliente->getNomeCompleto() . ", DATANASCIMENTO = '" . $Cliente->getDataNascimento() . "', CPF = '" . $Cliente->getCpf() . "', SEXO = '" . $Cliente->getSexo() . "', EMAIL = '" . $Cliente->getEmail() . "', TELEFONE = '".$Cliente->getTelefone()."', STATUS = " . $Cliente->getStatus() . " WHERE ID = " . $Cliente->getId() . ";";
+        $alterar = "UPDATE CLIENTE SET IDCATEGORIA = ".$Cliente->getCategoria()->getId().", NOME = " . $Cliente->getNome() . ", DATANASCIMENTO = '" . $Cliente->getDataNascimento() . "', CPF = '" . $Cliente->getCpf() . "', SEXO = '" . $Cliente->getSexo() . "', EMAIL = '" . $Cliente->getEmail() . "', TELEFONE = '".$Cliente->getTelefone()."' WHERE ID = " . $Cliente->getId() . ";";
         
         $conexao = $this->ConexaoMySQL->abrirBanco();
 
