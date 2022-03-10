@@ -57,7 +57,7 @@ background-color: #3c8dbc;
 }
 
 .navLogin {
+  position: absolute;
   width: 13%;
-  margin-left: 55%;
-  float: right;
+  margin-left: 72%;
 }
