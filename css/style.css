@@ -51,3 +51,13 @@ background-color: #3c8dbc;
     color: #ffffff;
     margin-right: 2rem;
 }
+
+.navbar-nav {
+  width: 100%;
+}
+
+.navLogin {
+  width: 13%;
+  margin-left: 55%;
+  float: right;
+}
