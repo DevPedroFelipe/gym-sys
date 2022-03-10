@@ -2,7 +2,7 @@
 
 if (session_status() !== PHP_SESSION_ACTIVE) {
     
-    require 'sessao.php';
+    require '../sessao.php';
     
 }
 

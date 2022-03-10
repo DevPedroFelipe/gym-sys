@@ -2,7 +2,7 @@
 
 if (session_status() !== PHP_SESSION_ACTIVE) {
     
-    require 'sessao.php';
+    require '../sessao.php';
     
 }
 
@@ -19,7 +19,7 @@ $Usuario = $RU->consultarUsuario($idUsuario);
 ?>
 
 <div class="container-fluid padding w-75 p-3 bootstrap snippet">
-    <form class="bg-dark text-white p-3" method="post" action="view/excluirUsuario2.php">
+    <form class="bg-light p-3" method="post" action="view/excluirUsuario2.php">
         <?php
 
         if (isset($_GET['c'])) {
@@ -68,23 +68,25 @@ $Usuario = $RU->consultarUsuario($idUsuario);
         </div>
         </br></br>
         <div class="col text-center">
-            <a href="#" class="btn btn-danger" id="btn-excluir">Excluir</a>
+            <a href="#" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal">Excluir</a>
             <a href="index.php?cod=4" class="btn btn-secondary">Voltar</a>
         </div>
-        <script type="text/javascript">
-            $(document).ready(function() {
-                $('#btn-excluir').click(function(ev) {
-
-                    if (!$('#confirm-delete').length) {
-                        $('body').append('<div class="modal fade" id="confirm-delete" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true"><div class="modal-dialog"><div class="modal-content"><div class="modal-header bg-danger text-white">EXCLUIR USUÁRIO<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button></div><div class="modal-body">Tem certeza de que deseja excluir o usuário?</div><div class="modal-footer"><a href="excluirUsuario_2.php?idUsuario=<?php echo $idUsuario; ?>" class="btn btn-danger text-white" id="dataComfirmOK">Sim</a><button type="button" class="btn btn-success" data-dismiss="modal">Cancelar</button></div></div></div></div>');
-                    }
-
-                    $('#confirm-delete').modal({
-                        show: true
-                    });
-                    return false;
-                });
-            });
-        </script>
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                Tem certeza que quer excluir o usuário(a) <strong><?= $Usuario->getNome(); ?></strong>?
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                <a href="view/excluirUsuario2.php?idUsuario=<?= $Usuario->getId(); ?>" class="btn btn-danger">Confirmar</a>
+            </div>
+            </div>
+        </div>
+        </div>
     </form>
 </div>

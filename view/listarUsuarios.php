@@ -2,7 +2,7 @@
 
 if (session_status() !== PHP_SESSION_ACTIVE) {
     
-    require 'sessao.php';
+    require '../sessao.php';
     
 }
 
@@ -26,13 +26,10 @@ $Usuarios = $RU->listarUsuarios();
 
                 	if($_GET['c'] == 1) {
 
-                		echo '<div class="alert alert-success alert-white rounded">
-					        <button type="button" data-dismiss="alert" aria-hidden="true" class="close">×</button>
-					        <div class="icon">
-					            <i class="fa fa-check fa-lg text-white"></i>
-					        </div>
-					        <strong>Sucesso!</strong> O usuário foi excluído!
-					    </div>';
+                		echo '<div class="alert alert-success alert-dismissible fade show" role="alert">
+                            <strong>Sucesso!</strong> O usuário foi excluído!
+                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                         </div>';
 
                 	}
 
