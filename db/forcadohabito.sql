@@ -56,5 +56,5 @@ CREATE TABLE CLIENTE(
 
     INSERT INTO CLIENTE(IDCATEGORIA, NOME, DATANASCIMENTO, CPF,
      SEXO, EMAIL, TELEFONE, OBSERVACAO, DATACADASTRO)
-     VALUES(1, 'Daniely Nascimento Faustino da Silva', '20/03/1995', '589.589.968-54', 'F', 'Danyzinha@gmail.com',
-     '(81)99878-9658', 'Nenhum problema de sáude', '2022-03-09 21:50:45')
+     VALUES(1, 'Daniely Nascimento Faustino da Silva', '1991-06-10', '589.589.968-54', 'F', 'Danyzinha@gmail.com',
+     '998789658', 'Nenhum problema de sáude', '2022-03-09 21:50:45');
