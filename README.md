@@ -10,4 +10,3 @@ Sistema de cadastros de clientes da academia Força do Hábito.
 * Execute no banco de dados MySQL o Script SQL que se encontra dentro da pasta db no diretório raiz.
 * Na pasta raiz acesse o index.php para iniciar o sistema.
 * Faça login com usuário "admin" e senha "123456".
-* Projeto em desenvolvimento...
