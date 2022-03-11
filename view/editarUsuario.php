@@ -55,6 +55,7 @@ $Usuario = $RU->consultarUsuario($idUsuario);
         <div class="form-group">
             <label for="id">ID</label>
             <input type="number" name="id" class="form-control" id="id" value="<?= $Usuario->getId(); ?>" disabled>
+            <input type="hidden" name="idUsuario" value="<?php echo $Usuario->getId(); ?>">
         </div>
         <div class="form-group">
             <label for="nome">Nome Completo</label>
