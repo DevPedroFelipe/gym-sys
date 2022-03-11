@@ -19,7 +19,7 @@ class RepositorioCategoria {
     public function cadastrarCategoria($Categoria) {
         $retorno = false;
 
-        $cadastrar = "INSERT INTO CATEGORIA(NOME, DESCRICAO) VALUES('" . $Categoria->getNome() . "', '" . $Categoria->getDescricao() . "';";
+        $cadastrar = "INSERT INTO CATEGORIA(NOME, DESCRICAO) VALUES('" . $Categoria->getNome() . "', '" . $Categoria->getDescricao() . "');";
 
         $conexao = $this->ConexaoMySQL->abrirBanco();
 
@@ -116,8 +116,8 @@ class RepositorioCategoria {
     public function excluirCategoria($idCategoria) {
         $retorno = false;
 
-        $deletar = "DELETE CATEGORIA WHERE ID = " . $idCategoria . "";
-
+        $deletar = "DELETE FROM CATEGORIA WHERE ID = " . $idCategoria . ";";
+        
         $conexao = $this->ConexaoMySQL->abrirBanco();
 
         if ($conexao->query($deletar)) {
