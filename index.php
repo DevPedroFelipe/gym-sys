@@ -76,10 +76,10 @@ require_once 'includes/header.php';
             include 'view/listarUsuarios.php';
             break;
           case 5:
-            include 'view/listarCliente.php';
+            include 'view/listarClientes.php';
             break;
           case 6:
-            include 'view/listarCategoria.php';
+            include 'view/listarCategorias.php';
             break;
           case 7:
             include 'view/editarUsuario.php';
