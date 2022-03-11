@@ -33,7 +33,7 @@ $Usuarios = $RU->listarUsuarios();
 		}
 
 		?>
-		<nav aria-label="breadcrumb mt-5">
+		<nav class="float-end" aria-label="breadcrumb mt-5">
 			<ol class="breadcrumb">
 				<li class="breadcrumb-item"><a href="index.php">Home</a></li>
 				<li class="breadcrumb-item active" aria-current="page">Relatório de Usuários</li>
