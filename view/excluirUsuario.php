@@ -2,7 +2,7 @@
 
 if (session_status() !== PHP_SESSION_ACTIVE) {
     
-    require '../sessao.php';
+    require '../session.php';
     
 }
 
@@ -34,6 +34,13 @@ $Usuario = $RU->consultarUsuario($idUsuario);
         }
 
         ?>
+        <nav aria-label="breadcrumb mt-5">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="index.php">Home</a></li>
+                <li class="breadcrumb-item"><a href="index.php?cod=4">Relatório de Usuários</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Excluir Usuário</li>
+            </ol>
+        </nav>
         <div class="form-group text-center">
             <label><i class="fas fa-user"></i>&nbsp;EXCLUIR USUÁRIO</label>
         </div>

@@ -2,7 +2,7 @@
 
 if (session_status() !== PHP_SESSION_ACTIVE) {
     
-    require '../sessao.php';
+    require '../session.php';
     
 } 
 
@@ -32,6 +32,12 @@ if (session_status() !== PHP_SESSION_ACTIVE) {
         }
 
         ?>
+        <nav aria-label="breadcrumb mt-5">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="index.php">Home</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Cadastrar Usuário</li>
+            </ol>
+        </nav>
         <div class="form-group text-center">
             <label><i class="fas fa-user"></i></label>&nbsp;CADASTRAR USUÁRIO
         </div>
