@@ -3,6 +3,7 @@
 namespace src;
 
 require_once 'Cliente.php';
+require_once 'Categoria.php';
 require_once 'ConexaoMySQL.php';
 
 class RepositorioCliente {
@@ -19,8 +20,9 @@ class RepositorioCliente {
     public function cadastrarCliente($Cliente) {
         $retorno = false;
 
-        $cadastrar = "INSERT INTO CLIENTE(IDCATEGORIA, NOME, DATANASCIMENTO, CPF, SEXO, EMAIL, TELEFONE, STATUS, DATACADASTRO) VALUES(" . $Cliente->getCategoria()->getId() . ", '" . $Cliente->getNome() . "', '" . $Cliente->getDataNascimento() . "', '" . $Cliente->getSexo() . "', '" . $Cliente->getEmail() . "', '".$Cliente->getTelefone()."', '" . $Cliente->getDataCadastro() . "');";
-
+        $cadastrar = "INSERT INTO CLIENTE(IDCATEGORIA, NOME, DATANASCIMENTO, CPF, SEXO, EMAIL, TELEFONE, OBSERVACAO, DATACADASTRO) VALUES (" . $Cliente->getCategoria()->getId() . ", '" . $Cliente->getNome() . "', '" . $Cliente->getDataNascimento() . "', '" . $Cliente->getCpf() . "', '" . $Cliente->getSexo() . "', '" . $Cliente->getEmail() . "', '".$Cliente->getTelefone()."', '" . $Cliente->getObservacao() . "', '" . $Cliente->getDataCadastro() . "');";
+        print_r($cadastrar);
+        die;
         $conexao = $this->ConexaoMySQL->abrirBanco();
 
         if ($conexao->query($cadastrar)) {
@@ -56,6 +58,7 @@ class RepositorioCliente {
                 $Cliente->setEmail($linha['EMAIL']);
                 $Cliente->setSexo($linha['SEXO']);
                 $Cliente->setTelefone($linha['TELEFONE']);
+                $Cliente->setObservacao($linha['OBSERVACAO']);
                 $Cliente->setDataCadastro($linha['DATACADASTRO']);
                 
                 $Categoria = new Categoria();
@@ -76,7 +79,7 @@ class RepositorioCliente {
     // Método responsável por listar o(s) clientes(s)
     public function listarClientes() {
 
-        $consultar = "SELECT CLIENTE.ID, CLIENTE.NOME, CLIENTE.STATUS FROM CLIENTE;";
+        $consultar = "SELECT CLIENTE.ID, CLIENTE.NOME, CLIENTE.CPF, CATEGORIA.NOME AS NOMECATEGORIA FROM CLIENTE, CATEGORIA WHERE CATEGORIA.ID = CLIENTE.IDCATEGORIA;";
 
         $conexao = $this->ConexaoMySQL->abrirBanco();
         $resultado = $conexao->query($consultar);
@@ -89,6 +92,13 @@ class RepositorioCliente {
 
                 $Cliente->setId($linha['ID']);
                 $Cliente->setNome($linha['NOME']);
+                $Cliente->setcPF($linha['CPF']);
+
+                $Categoria = new Categoria();
+
+                $Categoria->setNome($linha['NOMECATEGORIA']);
+
+                $Cliente->setCategoria($Categoria);
 
                 $Clientes[$i] = $Cliente;
 
@@ -107,8 +117,8 @@ class RepositorioCliente {
     public function alterarCliente($Cliente) {
         $retorno = false;
 
-        $alterar = "UPDATE CLIENTE SET IDCATEGORIA = ".$Cliente->getCategoria()->getId().", NOME = " . $Cliente->getNome() . ", DATANASCIMENTO = '" . $Cliente->getDataNascimento() . "', CPF = '" . $Cliente->getCpf() . "', SEXO = '" . $Cliente->getSexo() . "', EMAIL = '" . $Cliente->getEmail() . "', TELEFONE = '".$Cliente->getTelefone()."' WHERE ID = " . $Cliente->getId() . ";";
-        
+        $alterar = "UPDATE CLIENTE SET IDCATEGORIA = ".$Cliente->getCategoria()->getId().", NOME = '" . $Cliente->getNome() . "', DATANASCIMENTO = '" . $Cliente->getDataNascimento() . "', CPF = '" . $Cliente->getCpf() . "', SEXO = '" . $Cliente->getSexo() . "', EMAIL = '" . $Cliente->getEmail() . "', TELEFONE = '".$Cliente->getTelefone()."', OBSERVACAO = '".$Cliente->getObservacao()."' WHERE ID = " . $Cliente->getId() . ";";
+
         $conexao = $this->ConexaoMySQL->abrirBanco();
 
         if ($conexao->query($alterar)) {
@@ -124,10 +134,10 @@ class RepositorioCliente {
     }
 
     // Método responsável pela exclusão do cliente
-    public function excluirUsuario($idCliente) {
+    public function excluirCliente($idCliente) {
         $retorno = false;
 
-        $deletar = "DELETE CLIENTE WHERE ID = " . $idCliente . ";";
+        $deletar = "DELETE FROM CLIENTE WHERE ID = " . $idCliente . ";";
 
         $conexao = $this->ConexaoMySQL->abrirBanco();
 
