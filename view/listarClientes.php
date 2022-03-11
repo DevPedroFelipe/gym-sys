@@ -66,7 +66,20 @@ $Clientes = $RC->listarClientes();
 				<tr>
 					<td><?php echo $Cliente->getNome(); ?></td>
 					<td><?php echo $Cliente->getCpf(); ?></td>
-					<td><?php echo $Cliente->getCategoria()->getNome(); ?></td>
+
+					<?php 
+					
+					if($Cliente->getCategoria()->getNome() == "Normal") {
+						$cor = "#FF0000";
+					} else if($Cliente->getCategoria()->getNome() == "Grátis") {
+						$cor = "#00FF00";
+					} else {
+						$cor = "#0000FF";
+					} 
+					
+					?>
+				
+					<td style = "color:<?= $cor?>;"><?= $Cliente->getCategoria()->getNome(); ?></td>
 					<td>
 						<a data-toggle="tooltip" data-placement="bottom" title="Alterar" class="btn btn-success btn-sm text-white" href="index.php?cod=8&idCliente=<?php echo $Cliente->getId(); ?>"><i class="fas fa-edit"></i></a>
 						<a data-toggle="tooltip" data-placement="bottom" title="Excluir" class="btn btn-danger btn-sm text-white" href="index.php?cod=11&idCliente=<?php echo $Cliente->getId(); ?>"><i class="fas fa-trash-alt"></i></a>
