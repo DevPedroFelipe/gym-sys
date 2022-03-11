@@ -48,9 +48,9 @@ if (session_status() !== PHP_SESSION_ACTIVE) {
         <div class="form-group">
             <label for="perfil">Perfil</label>
             <select class="form-select" aria-label="Escolha o tipo de Perfil" id="perfil" name="perfil">
-                <option value="Administrar">Administrar</option>
-                <option value="Editar">Editar</option>
-                <option value="Visualizar">Visualizar</option>
+                <option value="Administrador">Administrador</option>
+                <option value="Operador">Operador</option>
+                <option value="Visualizador">Visualizador</option>
             </select>
         </div>
         <div class="form-group">

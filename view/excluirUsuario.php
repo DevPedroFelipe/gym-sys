@@ -56,9 +56,9 @@ $Usuario = $RU->consultarUsuario($idUsuario);
         <div class="form-group">
             <label for="perfil">Perfil</label>
             <select class="form-select" aria-label="Escolha o tipo de Perfil" name="perfil" id="perfil" disabled>
-                <option value="Administrar" <?php if ($Usuario->getPerfil() == "Administrar") { echo 'selected'; } ?>>Administrar</option>
-                <option value="Editar" <?php if ($Usuario->getPerfil() == "Editar") { echo 'selected'; } ?>>Editar</option>
-                <option value="Visualizar" <?php if ($Usuario->getPerfil() == "Visualizar") { echo 'selected'; } ?>>Visualizar</option>
+                <option value="Administrador" <?php if ($Usuario->getPerfil() == "Administrador") { echo 'selected'; } ?>>Administrador</option>
+                <option value="Operador" <?php if ($Usuario->getPerfil() == "Operador") { echo 'selected'; } ?>>Operador</option>
+                <option value="Visualizador" <?php if ($Usuario->getPerfil() == "Visualizador") { echo 'selected'; } ?>>Visualizador</option>
             </select>
         </div>
         <div class="form-group">
