@@ -48,7 +48,12 @@ CREATE TABLE CLIENTE(
     INSERT INTO USUARIO(NOME, LOGIN, SENHA,
      PERFIL, EMAIL, DATACADASTRO)
      VALUES('Pedro Felipe Marques Ramos de França', 'lipe', SHA1('123456'),
-     'Administrar', 'tipedrofelipe@gmail.com', '2022-03-08 09:43:08');
+     'Operador', 'tipedrofelipe@gmail.com', '2022-03-08 09:43:08');
+
+     INSERT INTO USUARIO(NOME, LOGIN, SENHA,
+     PERFIL, EMAIL, DATACADASTRO)
+     VALUES('João da Silva Marques', 'joao', SHA1('123456'),
+     'Visualizador', 'joao@gmail.com', '2022-03-09 12:13:18');
 
      INSERT INTO CATEGORIA(NOME, DESCRICAO) 
      VALUES ('Grátis', 'Categoria do tipo grátis.');
@@ -61,5 +66,15 @@ CREATE TABLE CLIENTE(
 
     INSERT INTO CLIENTE(IDCATEGORIA, NOME, DATANASCIMENTO, CPF,
      SEXO, EMAIL, TELEFONE, OBSERVACAO, DATACADASTRO)
-     VALUES(1, 'Daniely Nascimento Faustino da Silva', '1991-06-10', '589.589.968-54', 'F', 'Danyzinha@gmail.com',
+     VALUES(2, 'Daniely Nascimento Faustino da Silva', '1991-06-10', '589.589.968-54', 'f', 'Danyzinha@gmail.com',
      '998789658', 'Nenhum problema de sáude', '2022-03-09 21:50:45');
+
+     INSERT INTO CLIENTE(IDCATEGORIA, NOME, DATANASCIMENTO, CPF,
+     SEXO, EMAIL, TELEFONE, OBSERVACAO, DATACADASTRO)
+     VALUES(1, 'Otávio de Freitas Lopes', '1984-08-21', '698.147.326-96', 'm', 'otavio@gmail.com',
+     '936782698', 'Problemas na coluna', '2022-03-09 18:53:14');
+
+     INSERT INTO CLIENTE(IDCATEGORIA, NOME, DATANASCIMENTO, CPF,
+     SEXO, EMAIL, TELEFONE, OBSERVACAO, DATACADASTRO)
+     VALUES(3, 'Vanessa Rebeca da Silva', '1992-07-30', '746.698.125-23', 'f', 'vanessa@gmail.com',
+     '301786987', 'Possui dor nas pernas', '2022-03-10 15:25:18');
