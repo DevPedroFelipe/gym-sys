@@ -7,12 +7,12 @@ require_once 'includes/header.php';
 ?>
 
 <div class="container">
-  <nav class="navbar navbar-expand-lg">
-    <div class="container-fluid">
+  <nav class="navbar navbar-expand-lg navbar-light bg-primary">
+    <div class="container-fluid w-100">
       <a class="navbar-brand" href="index.php"><img src="img/brandIcon.png"></a>
       <p id="parGym">GYM Sys</p>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
+      <button class="navbar-toggler bg-light" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon bg-light"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNavDropdown">
         <ul class="navbar-nav">
@@ -36,7 +36,7 @@ require_once 'includes/header.php';
                   </li>';
             }
           ?>
-          <li class="nav-item navLogin">
+          <li class="nav-item dropdown navLogin">
           <?php
 
           if ((!isset($_SESSION['login'])) and (!isset($_SESSION['senha']))) {
@@ -51,7 +51,7 @@ require_once 'includes/header.php';
       </div>
     </div>
   </nav>
-  <div class="alert alert-primary alert-dismissible fade show mt-5" role="alert">
+  <div class="alert bg-info alert-dismissible fade show mt-5" role="alert">
     <strong>Bem Vindo(a)!</strong> Esse sistema tem como função cadastrar os clientes matriculados na academia Força do Hábito.
     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
   </div>

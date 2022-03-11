@@ -31,10 +31,6 @@ background-color: #3c8dbc;
   color: #ffffff !important;
 }
 
-.nav-link:hover {
-  transform: scale(1.1);
-}
-
 .navbar-brand img {
   height: 60px;
   width: 60px;
