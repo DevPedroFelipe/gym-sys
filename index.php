@@ -17,16 +17,21 @@ require_once 'includes/header.php';
       <div class="collapse navbar-collapse" id="navbarNavDropdown">
         <ul class="navbar-nav">
           <?php
+
             if ((isset($_SESSION['login'])) and (isset($_SESSION['senha']))) {
-              echo '<li class="nav-item dropdown">
+
+              if($_SESSION['perfilUsuario'] != "Visualizador") {
+                echo '<li class="nav-item dropdown">
                       <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="fa-solid fa-circle-plus fa-lg"></i>&nbsp;Cadastrar</a>
                       <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                         <li><a class="dropdown-item" href="index.php?cod=1">Usuário</a></li>
                         <li><a class="dropdown-item" href="index.php?cod=2">Cliente</a></li>
                         <li><a class="dropdown-item" href="index.php?cod=3">Categoria</a></li>
                       </ul>
-                    </li>
-                    <li class="nav-item dropdown">
+                    </li>';
+              }
+              
+              echo'<li class="nav-item dropdown">
                       <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="fa-solid fa-bars-staggered fa-lg"></i>&nbsp;Relatório</a>
                       <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                         <li><a class="dropdown-item" href="index.php?cod=4">Usuário</a></li>
@@ -57,6 +62,10 @@ require_once 'includes/header.php';
   </div>
   <div class="container-fluid padding h-75 overflow-auto">
     <?php
+
+    if(!isset($_GET['cod'])) {
+      include 'view/dashboard.php';
+    }
 
     if (isset($_SESSION['login']) and isset($_SESSION['senha'])) {
 

@@ -141,7 +141,7 @@ class RepositorioUsuario {
     public function autenticarUsuario($login, $senha) {
         $retorno = false;
 
-        $autenticar = "SELECT USUARIO.ID AS IDUSUARIO FROM USUARIO WHERE BINARY LOGIN = '" . $login . "' AND BINARY SENHA = SHA1('" . $senha . "');";
+        $autenticar = "SELECT USUARIO.ID AS IDUSUARIO, USUARIO.PERFIL AS PERFILUSUARIO FROM USUARIO WHERE BINARY LOGIN = '" . $login . "' AND BINARY SENHA = SHA1('" . $senha . "');";
 
         $conexao = $this->ConexaoMySQL->abrirBanco();
         $resultado = $conexao->query($autenticar);
@@ -150,6 +150,8 @@ class RepositorioUsuario {
 
             while ($linha = $resultado->fetch_assoc()) {
                 $_SESSION['idUsuario'] = $linha['IDUSUARIO'];
+                $_SESSION['perfilUsuario'] = $linha['PERFILUSUARIO'];
+                
                 $retorno = true;
             }
         }
