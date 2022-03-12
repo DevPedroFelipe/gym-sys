@@ -67,7 +67,7 @@ CREATE TABLE CLIENTE(
     INSERT INTO CLIENTE(IDCATEGORIA, NOME, DATANASCIMENTO, CPF,
      SEXO, EMAIL, TELEFONE, OBSERVACAO, DATACADASTRO)
      VALUES(2, 'Daniely Nascimento Faustino da Silva', '1991-06-10', '589.589.968-54', 'f', 'Danyzinha@gmail.com',
-     '998789658', 'Nenhum problema de sáude', '2022-03-09 21:50:45');
+     '998789658', 'Nenhum problema de saúde', '2022-03-09 21:50:45');
 
      INSERT INTO CLIENTE(IDCATEGORIA, NOME, DATANASCIMENTO, CPF,
      SEXO, EMAIL, TELEFONE, OBSERVACAO, DATACADASTRO)
@@ -78,3 +78,13 @@ CREATE TABLE CLIENTE(
      SEXO, EMAIL, TELEFONE, OBSERVACAO, DATACADASTRO)
      VALUES(3, 'Vanessa Rebeca da Silva', '1992-07-30', '746.698.125-23', 'f', 'vanessa@gmail.com',
      '301786987', 'Possui dor nas pernas', '2022-03-10 15:25:18');
+
+     INSERT INTO CLIENTE(IDCATEGORIA, NOME, DATANASCIMENTO, CPF,
+     SEXO, EMAIL, TELEFONE, OBSERVACAO, DATACADASTRO)
+     VALUES(3, 'Paulo Ribeiro Texeira', '1984-06-15', '987.264.368-12', 'm', 'paulo@gmail.com',
+     '936473657', 'Possui pino no joelho', '2022-03-10 15:34:25');
+
+     INSERT INTO CLIENTE(IDCATEGORIA, NOME, DATANASCIMENTO, CPF,
+     SEXO, EMAIL, TELEFONE, OBSERVACAO, DATACADASTRO)
+     VALUES(3, 'Manuela Pinheiro de Paula', '2003-12-27', '236.647.036-96', 'f', 'manuela@gmail.com',
+     '914363659', 'Nenhum problema de saúde', '2022-03-11 20:14:59');
