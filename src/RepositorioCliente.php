@@ -21,8 +21,7 @@ class RepositorioCliente {
         $retorno = false;
 
         $cadastrar = "INSERT INTO CLIENTE(IDCATEGORIA, NOME, DATANASCIMENTO, CPF, SEXO, EMAIL, TELEFONE, OBSERVACAO, DATACADASTRO) VALUES (" . $Cliente->getCategoria()->getId() . ", '" . $Cliente->getNome() . "', '" . $Cliente->getDataNascimento() . "', '" . $Cliente->getCpf() . "', '" . $Cliente->getSexo() . "', '" . $Cliente->getEmail() . "', '".$Cliente->getTelefone()."', '" . $Cliente->getObservacao() . "', '" . $Cliente->getDataCadastro() . "');";
-        print_r($cadastrar);
-        die;
+        
         $conexao = $this->ConexaoMySQL->abrirBanco();
 
         if ($conexao->query($cadastrar)) {
