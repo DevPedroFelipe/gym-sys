@@ -62,6 +62,10 @@ require_once 'includes/header.php';
   <div class="container-fluid padding h-75 overflow-auto">
     <?php
 
+    if(!isset($_GET['cod'])) {
+      include 'view/dashboard.php';
+    }
+
     if (isset($_SESSION['login']) and isset($_SESSION['senha'])) {
 
       if (isset($_GET['cod'])) {

@@ -151,4 +151,37 @@ class RepositorioCliente {
 
         return $retorno;
     }
+
+    // Método responsável por listar as quantidades de cliente por tipo de categoria
+    public function quantidadeCategoria() {
+
+        $consultar = 'SELECT
+        COUNT(CASE WHEN CLIENTE.IDCATEGORIA = CATEGORIA.ID AND CATEGORIA.NOME LIKE "Grátis" THEN 1 END) AS GRATIS,
+        COUNT(CASE WHEN CLIENTE.IDCATEGORIA = CATEGORIA.ID AND CATEGORIA.NOME LIKE "Normal" THEN 1 END) AS NORMAL,
+        COUNT(CASE WHEN CLIENTE.IDCATEGORIA = CATEGORIA.ID AND CATEGORIA.NOME LIKE "Prêmio" THEN 1 END) AS PREMIO
+        FROM CLIENTE, CATEGORIA;';
+
+        $conexao = $this->ConexaoMySQL->abrirBanco();
+        $resultado = $conexao->query($consultar);
+
+        if ($resultado->num_rows > 0) {
+
+            $i = 0;
+            while ($linha = $resultado->fetch_assoc()) {
+
+                $array = array();
+                
+                array_push ($array, intval($linha['GRATIS']), intval($linha['NORMAL']), intval($linha['PREMIO']));
+
+                $i++;
+
+            }
+        } else {
+            $array = false;
+        }
+
+        $this->ConexaoMySQL->fecharBanco();
+
+        return $array;
+    }
 }
